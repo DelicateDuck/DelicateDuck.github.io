@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="styling.css" media="screen">
+<script src="personal js.js"></script>
+<title>Rishi | Japan</title>
+	
+<style type = "text/css">
+	body {background-color: #FFB9EE;}
+	html, body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";}
+</style>
+</head>
+
+<body>
+	<div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">Menu</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="index.html">Home</a>
+			<a href="personal_aboutme.html">About Me</a>
+			<a href="personal_game.html">Game Development</a>
+			<a href="personal_japan.html">Japan</a>
+			<a href="personal_art.html">Art</a>
+		</div>
+	</div> 
+	
+	<a href="index.html"><img id="logo" img src="images/logo.png" alt="logo" height="10%" width="10%" class="center"></a>
+	
+	<header>
+		<h1><strong>ようこそ！(Welcome!)</strong></h1>
+	</header>
+	<h3>I have been studying Japanese for 6 years and am completing a minor in Japanese. Since I studied abroad in Japan, I learned the importance of being culturally aware and connecting with people from other parts of the world.</h3>
+	<br>
+	
+	<div id="studyAbroad">
+		<h1><strong>Summer 2018</strong></h1>
+		<h2>Study Abroad in Okinawa, Japan</h2>
+		<h3>Subsidized by Okinawa Peace Scholarship, 6 weeks, lived with host family, attended school, volunteered at daycare</h3>
+		<div class="row">
+			<div class="columnG">
+				<img src="clips/japan reel/japan reel.gif" alt="Japan reel" style="width:100%">
+			</div>
+			<div class="columnG">
+				<img class="mySlides" src="images/Japan/1.jpg" alt="Okinawa city" style="width:100%">
+				<img class="mySlides" src="images/Japan/2.jpg" alt="School" style="width:100%">
+				<img class="mySlides" src="images/Japan/3.jpg" alt="Aquarium beach" style="width:100%">
+				<img class="mySlides" src="images/Japan/4.jpg" alt="Cave" style="width:100%">
+				<img class="mySlides" src="images/Japan/9.jpg" alt="Taco rice" style="width:100%">
+				<img class="mySlides" src="images/Japan/10.jpg" alt="Tonkotsu Ramen" style="width:100%">
+				<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+				<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+			</div>
+		</div> 
+	</div>
+	<br>
+	
+	<div id="speechContest">
+		<h1><strong>Spring 2020</strong></h1>
+		<h2>Awarded Consul General's Award as First Prize at Michigan Japanese Language Speech Contest</h2>
+		<img class="centeredImg" img src="images/Japan/speech_img.jpg" alt="Awarded first prize at speech contest" style="width:50%">
+	</div>
+	<br>
+	
+	<div id="quizBowl">
+		<h1><strong>Spring 2019, 2020</strong></h1>
+		<h2>First Place at Michigan Japanese Quiz Bowl Competition</h2>
+		<h3>Our team claimed first place 2 years out of the 3 years we participated</h3>
+		<img class="centeredImg" img src="images/Japan/quizbowl_trophy.jpg" alt="Japanese Quiz Bowl trophy" style="width:25%">
+	</div>
+	
+</body>
+</html>
+
+<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  if (n > x.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = x.length} ;
+	  for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	  }
+	  x[slideIndex-1].style.display = "block";
+	}
+</script>
+
