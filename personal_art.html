@@ -29,7 +29,7 @@
 			</div>
 		</div> 
 		
-		<a href="index.html" class="logo-wrapper"><img id="logo" img src="images/logo.png" alt="logo"></a>
+		<a href="index.html" class="logo-wrapper"><img id="logo" src="images/logo.png" alt="logo"></a>
 	</header>
 	<main id="main">
 		<div class="intro">
@@ -43,20 +43,28 @@
 		<div class="art-grid">
 			<div class="art-grid-item">
 				<div class="slideshow-container">
+					<img class="slide" src="images/Art/shop_rendered.png" alt="shop rendered" width="100%">
+					<img class="slide" src="images/Art/shop_mesh.png" alt="shop mesh" width="100%">
+					<button class="prev" onclick="plusSlides(-1, 0)">&#10094;</button>
+					<button class="next" onclick="plusSlides(1, 0)">&#10095;</button>
+				</div>
+			</div>
+			<div class="art-grid-item">
+				<div class="slideshow-container">
 					<img class="slide" src="images/Art/cybertruck_front.png" alt="cybertruck front" width="100%">
 					<img class="slide" src="images/Art/cybertruck_back.png" alt="cybertruck back" width="100%">
-					<button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-					<button class="next" onclick="plusSlides(1)">&#10095;</button>
+					<button class="prev" onclick="plusSlides(-1, 1)">&#10094;</button>
+					<button class="next" onclick="plusSlides(1, 1)">&#10095;</button>
 				</div>
 			</div>
 			<div class="art-grid-item">
 				<img src="images/Art/shotgun.png" alt="shotgun asset" width="100%">
 			</div>
+		</div>
+		<div class="art-grid">
 			<div class="art-grid-item">
 				<img src="images/Art/pillar.png" alt="pillar asset" width="100%">
 			</div>
-		</div>
-		<div class="art-grid">
 			<div class="art-grid-item">
 				<img src="images/Art/pot.png" alt="flower pot asset" width="100%">
 			</div>
@@ -64,38 +72,43 @@
 				<img src="images/Art/sofas.png" alt="sofas asset" width="100%">
 			</div>
 			<img src="images/Art/switch_static.png" class="static-img" alt="Animated bakery shop" width="100%">
-			<video autoplay muted loop id="switch" class="non-static-media" width="100%">
+		</div>
+		<video autoplay muted loop id="switch" class="non-static-media centered-img" width="32%">
 				<source src="clips/art reel/switch_animation.mp4" type="video/mp4" />
 		</video>
-		</div>
 	</main>
 </body>
 	
 </html>
 
 <script>
-	let slideIndex = 1;
-        showSlides(slideIndex);
+	let slideIndices = [];
 
-        function plusSlides(n) {
-            slideIndex += n;
-            showSlides(slideIndex);
-        }
+	// Initialize all slideshows
+	document.addEventListener("DOMContentLoaded", function () {
+		const containers = document.getElementsByClassName("slideshow-container");
 
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slides[slideIndex-1].style.display = "block";
+		for (let i = 0; i < containers.length; i++) {
+			slideIndices[i] = 1;
+			showSlides(i, 1);
 		}
+	});
+
+	function plusSlides(n, slideshowIndex) {
+		showSlides(slideshowIndex, slideIndices[slideshowIndex] += n);
+	}
+
+	function showSlides(slideshowIndex, n) {
+		const container = document.getElementsByClassName("slideshow-container")[slideshowIndex];
+		const slides = container.getElementsByClassName("slide");
+
+		if (n > slides.length) slideIndices[slideshowIndex] = 1;
+		if (n < 1) slideIndices[slideshowIndex] = slides.length;
+
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+
+		slides[slideIndices[slideshowIndex] - 1].style.display = "block";
+	}
 </script>
