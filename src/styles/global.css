@@ -1,0 +1,35 @@
+:root {
+    --bg: #14161a;
+    --hover-color: rgb(0, 204, 255);
+    --primary-content-color: #ebecf0;
+    --secondary-content-color: #abb1bf;
+    --bulma-strong-color: var(--primary-content-color);
+    --navbar-background-color: #14161a;
+}
+
+header {
+    background-color: var(--navbar-background-color);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+html
+body {
+    height: 100%;
+}
+
+.title {
+    color: var(--primary-content-color);
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background-color: #14161a;
+    }
+}
+
+.box {
+    background-color: #14161a;
+}

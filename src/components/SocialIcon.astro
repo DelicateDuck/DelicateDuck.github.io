@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { platform, href } = Astro.props;
+
+const iconNames = {
+  github: "simple-icons:github",
+  bluesky: "simple-icons:bluesky"
+};
+---
+
+<span class="icon">
+  <Icon name={iconNames[platform]} />
+</span>
+
+<style>
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-icon] {
+    width: 100%;
+    height: 100%;
+  }
+</style>

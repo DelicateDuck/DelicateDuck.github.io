@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Rishi"
+---
+<BaseLayout pageTitle={pageTitle}>
+  	<section class="hero is-fullheight-with-navbar level hero-with-bg">
+		<video autoplay muted loop playsinline class="hero-video">
+			<source type="video/mp4" src="/index_reel.mp4" />
+		</video>
+
+		<div class="hero-overlay"></div>
+
+		<div class="container hero-body">
+			<div class="level-item logo">
+				<img src="/logo.png" alt="Delicate Duck logo" width="200" />
+			</div>
+
+			<div>
+				<p class="title">Rishi Rallapalli</p>
+				<p class="subtitle">
+					Game Developer | Software Engineer
+				</p>
+				<p>
+					Currently working on
+						<em><nobr>Unreal Engine 5 simulations</nobr></em>
+					and an
+					<a href="https://www.noroominheaven.com" target="_blank">
+						<em>indie stealth-extraction game</em>
+					</a>
+					.
+				</p>
+
+				<div class="buttons mt-4">
+					<a class="button is-primary" href="/projects/">View My Work</a>
+					<a class="button is-light" href="mailto:rishi@kquat.com">Get In Touch</a>
+				</div>
+			</div>
+ 	</section>
+</BaseLayout>
+
+<style is:global>
+	:root {
+		--bg: transparent;
+	}
+
+	.navbar {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 10;
+		background: transparent;
+	}
+
+	.hero-with-bg {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-with-bg .hero-video {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+	}
+
+	.hero-with-bg .hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.hero-with-bg .hero-body {
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero .title,
+	.hero .subtitle,
+	.hero p {
+		color: var(--primary-content-color);
+		text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+	}
+
+	@media screen and (max-width: 1023px) {
+		.logo {
+			margin-bottom: 2rem;
+		}
+
+		.logo img {
+			width: 10rem;
+		}
+
+		.hero-body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+		}
+
+		.buttons {
+			justify-content: center;
+			display: flex;
+    	}
+	}
+</style>
